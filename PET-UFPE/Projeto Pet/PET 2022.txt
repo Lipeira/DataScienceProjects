@@ -1,0 +1,201 @@
+Conceitos básicos
+
+Testar --> Comparar
+
+Comparar com o que o sistema é 
+e o que o sistema deveria ser, aquele sistema ideal planejado que resolve
+os problemas dos stakeholders -- conversar com os stakeholders -- entender
+aspectos funcionais e não funcionais -- ter um documento de requisitos
+feitos com os stakeholders
+
+stakeholders --> parte interessada -- coordenadores, alunos, professores, patrocinadores
+
+Comparar o software fazendo perguntas -----> esse sistema tem a funcionalidade de ser justo
+e liberar a prova para todos e todas igualmente? -- a comparação serve para evitar que falhas
+aconteçam
+
+Por que se preocupar com falhas? -- falhas podem incomodar, é aquele resultado diferente
+do esperado, pode custar o tempo, pode custar dinheiro -- bug na amazon ou bug na magazine luiza,
+pode custar vidas -- defeito de softwares que custaram vidas, pode ter problemas de privacidade com
+um preço muito alto
+
+Objetivo do teste de software --> encontrar bugs
+Encontrar o mais rapido possivel e evitar perdas de recursos
+testar denovo o software para ter confiança no software
+
+
+fase de especificação, design, code, test, publicação
+dependendo da fase, o custo pode ser bem maior para corrigir
+o bug, a culpa não é principalmente do programador!
+uns problemas podem gerar outros maiores
+
+existe teste de software para passar e para falhar
+
+passar - o que o cliente pede, o fluxo tradicional, casos aceitaveis
+testar  para falhar - outras possibilidades de caso teste para quebrar o sistema
+
+teste de software: consiste na verificação dinâmica que espera comportramentos em um numero de casos
+testes finitos, selecionados para execução do dominio
+
+verificação estática é diferente de verificação dinâmica
+
+teste de software é sempre dinâmico
+
+error, fault, failure
+
+erro -- erro humano, mal interpretação do programador, erro que causa uma falta
+erro feito pelo ser humano
+
+falta -- representação desse erro, se materializar em algum lugar, concretizar
+é a causa de uma falha, por exemplo < ao inves de >
+
+falha -- manifestação dessa falta, incapacidade do software por causa da falta
+tela azul, pór exemplo
+
+existem falhas que não são notadas em um programa, que podem ser expostas
+tempo depois
+
+faltas geram falhas
+
+teste de software significa expor falhas,
+comparando com o objetivo, significa "encontrar falhas" no sistema
+
+Tudo aquilo que vê ---> falha,
+o que causa-- falta-
+o que causa falta -- erro humano
+
+nem sempre as falhas são expostas, mas faltas infectaram o sistema
+quanto mais testes você faz no sistema, mais caro fica, porém mais qualidade
+e menos bugs ficam no programa
+
+
+* verdades que não precisam de uma prova -- axiomas do teste de software
+
+-- É impossível testar tudo, a quantidade de entradas possíveis É IMENSA, formas de testar entradas é gigante
+-- Bugs andam em bando ---> se um bug foi encontrado, vale a pena testar aquele componente de software, outros defeitos podem ter partido dali
+-- se um erro foi cometido,pode ter sido cometido varias vezes, programador tem dias ruins
+-- mais bugs pode estar em um lugar com um bug, provavelmente
+-- Teste não atesta a inexistencia de bugs --> Mesmo buscando bugs e não achando, não podemos
+considera-los livre de defeitos, não importa o quanto você teste, sempre tem algo que pode ser
+testado, provavel que leve a falha
+-- Paradoxo do pesticida --> Aplicar pesticida resolve no curto prazo, mas não no longo
+resolver um bug não significa que eliminou todos, uns sobrevivem por causa da resistência, mesma coisa
+com virus, então esses virus resistentes aumentam. roda-lo novamente não terá efeito por muito tempo, o efeito ja foi consertado
+-- Nem todo bug será corrigido -- se existe uma falha existe um bug, arriscado corrigir,
+nao vale a pena, é feature, é normal, depende dele para rodar um programa.., muito a longo prazo
+vale a pena resolver um bug agora ou depois, perdendo uma data importante como ambiente favoravel
+para lançar um produto, nem sempre uma feature precisa ser resolvida
+--Requisitos mudam> o mundo muda muito rápido, novas tecnologias, novas leis, concorrentes,
+velhos concorrentes com novos produtos. Aceite as mudanças, não resista, isso que é o
+diferencial
+--Teste é uma atividade baseada em risco
+--Como não é possivel testar todas as possibilidades, vamos ter quue assumir riscos, quando parar
+--testadores não são os mais populares, programadores são tratados como derrotados
+testadores vitoriosos e programadores derrotados? reportar um defeito também é derrota para testadores
+
+
+Caracterização do teste do software - como é testado:
+
+visibilidade: você tem acesso ou não ao código fonte? - blackbox (caixa opaca), whitebox - enxergar o programa
+
+target(objeto): testando a unidade, método, classe ou integração entre classe A ou B - especifidade do codigo,
+fase de teste - sistema, integração ou unitario (uma unica função)
+
+Objetivo - para qque? testando para garantir as funcionalidades funcionam? garantir requisito não funcional?
+performancee? segurança?
+
+
+BlackBox -- cria os casos testes e executa sem conheçer a estrutura interna
+WhiteBox -- executa os casos testes conheçendo a estrutura interna do programa
+
+Oráculo de teste - mecanismo para determinar se o teste passou ou falhou
+Passou - aquilo que obseva é coerente do que esperava - teste de software passou
+pedaço de papel ou trecho de código e dar veredito se o teste passou ou não
+fazer a validação com o oráculo
+verificação do resultado
+
+SUT - system under test - o sistema que está sendo testado
+teste dinâmico - coloca--se o sistema para rodar 
+teste estático - -sut não está em execução - Código fonte, UML, arquitetura
+tentar encontrar erros e conttradições
+
+
+verificação estática dos requisitos de alto nível
+--- assume papel do cliente
+---pesquise como os clientes devem ser e use tal informação para guiar o exame
+-- escalabilidade, visão do clientet, encontrar falhas, experiência do cliente
+
+verificação estática dos requisitos de baixo nível
+
+-- checklist sobre atributtos da especificação
+--completa,precisa, exata e não ambígua
+
+importante fazer comparações com métodos e parãmetros determinísticos
+
+qual é melhor usar, estática ou dinâmica? depende, ou pode ser feita em conjunto
+
+Teste manual ou teste automático -- os casos testes foram executados manualmente e gerados manualmente?
+codados manualmente?
+
+caixa preta -- olhar aterfatos apenas externos -- testa SUT apenas no ponto de vista do usuário
+testar requisitos, fazer um teste de alto nível, ver entradas e saídas
+Dá para afirmar que existe uma falta presente no código, que resulta em uma falha?
+
+caixa branca -- olhar artefatos internos e externos
+testar o nosso código olhando também a estrutura interna
+documentos usados na caixa preta
+banco de dados
+código fonte
+banco de dados, e etc...
+
+
+os testes estáticos analisa a lista de requisitos do software, sem precisar rodar ele
+pode ser automático ou manual
+---------------------------------------------------------------
+
+
+estratégias de criar casos testes ou derivar casos testes para fazer teste de software -- 
+classes de equivalência -- estrategias quando não tem acesso ao código-fonte 
+
+-- criar casos testes para não omitir cenários (ser completo) e também para não criar casos demais,
+para não ficar muito pesado
+
+variável = montante
+valores = conjunto dos números, que são agrupados em classes de equivalencia - intervalos com propriedades
+proprias, classe 1, dois e três
+cada classe deve ser testada, para testar os casos testes de valores com propriedades equivalentes
+
+sut = software sendo testado
+
+Nenhum elemento pode pertencer a duas ou mais classes
+
+a gente usa a classe para fazer testes menos custosos e menos redundantes
+
+
+projetista de teste identifica valor, quebra em classes e escolhe um representante, depois escreve
+os testes e passa para o testador testar
+
+melhor colocar um teste deterministico, por exemplo -8 do que "digite um valor menor ou igual a zero"
+não colocar oraculo "verifique se funcionou"
+
+quanto mais preciso o caso teste, melhor, para não haver dúvidas
+
+
+Seleção testes normal fraca
+normal forte
+seleção testes robusto fraco
+robusto forte
+
+três variáveis -- como definir as combinações?
+
+variáveis inter-dependentes: estratégia de juntar em uma variável só
+variáveis que dependem uma da outra
+
+Teste de fronteira: escolher os dados de entrada de maneira proposital nas fronteiras,
+
+de negativo ao zero, testar o zero (a fronteira) - ver problemas de segurança
+
+
+
+
+
