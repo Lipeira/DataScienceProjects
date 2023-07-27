@@ -1,0 +1,11 @@
+Pode-se mandar para uma ENV depois, para não ficar
+explício
+
+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
+
+
+
+
+documentation:
+
+https://platform.openai.com/account/api-keys
